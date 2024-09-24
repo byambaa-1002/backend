@@ -1,10 +1,10 @@
-const { posts } = require("../../database/posts");
+// const { posts } = require("../../database/posts");
 
-const getPosts = (request, response) => {
-  response.json({
-    posts: posts,
-    message: "success",
-  });
-};
+// const getPosts = (request, response) => {
+//   response.json({
+//     posts: posts,
+//     message: "success",
+//   });
+// };
 
-module.exports = { getPosts };
+// module.exports = { getPosts };
