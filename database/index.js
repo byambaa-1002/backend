@@ -1,10 +1,9 @@
-// app.js
 import postgres from "postgres";
 require("dotenv").config();
 
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
+const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
-const sql = postgres({
+export const sql = postgres({
   host: PGHOST,
   database: PGDATABASE,
   username: PGUSER,

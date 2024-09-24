@@ -1,18 +1,18 @@
-// const express = require("express");
-// const userRouter = require("./router/user.router");
-// const postRouter = require("./router/post.router");
-// const commentRouter = require("./router/comment.router");
+import express from "express";
+import { customersRouter } from "./router/customers";
 
-// const app = express();
+const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 
-// const port = 8080;
+const port = 8080;
 
-// app.use("/user", userRouter);
-// app.use("/post", postRouter);
-// app.use("/comment", commentRouter);
+app.use("/customers", customersRouter);
 
-// app.listen(port, () => {
-//   console.log(`server running at a http://localhost:${port}`);
-// });
+app.listen(port, () => {
+  console.log(`server started http://localhost:${port}`);
+});
+export async function getPgVersion() {
+  const result = await sql`select version()`;
+  console.log(result);
+}
