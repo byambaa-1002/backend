@@ -2,9 +2,9 @@ import express from "express";
 ///////////////////////////////////////
 import { sql } from "../database";
 
-export const customersRouter = express.Router();
+export const justomersRouter = express.Router();
 
-customersRouter.get("/", async (_request, response) => {
+justomersRouter.get("/", async (_request, response) => {
   const customers = await sql`SELECT * FROM customers`;
 
   response.status(200).json({
@@ -12,7 +12,7 @@ customersRouter.get("/", async (_request, response) => {
   });
 });
 
-customersRouter.post("/", async (request, response) => {
+justomersRouter.post("/", async (request, response) => {
   const { firstname, lastname, email, addres } = request.body;
   console.log(request.body);
   try {
@@ -28,7 +28,7 @@ customersRouter.post("/", async (request, response) => {
   }
 });
 
-customersRouter.put("/", async (request, response) => {
+justomersRouter.put("/", async (request, response) => {
   const { firstname, lastname, email, addres, customerId } = request.body;
   console.log(request.body.customerId);
   try {
@@ -42,7 +42,7 @@ customersRouter.put("/", async (request, response) => {
   }
 });
 
-customersRouter.delete("/", async (request, response) => {
+justomersRouter.delete("/", async (request, response) => {
   const { id } = request.body;
   console.log(request.body);
   try {
